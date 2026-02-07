@@ -1,0 +1,91 @@
+{
+  "village": {
+    "name": "Gabura",
+    "coordinates": [21.8833, 89.1833],
+    "timeline": [
+      {
+        "year": 2000,
+        "population": 12000,
+        "coastline": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [89.17, 21.87],
+              [89.20, 21.87],
+              [89.20, 21.90],
+              [89.17, 21.90],
+              [89.17, 21.87]
+            ]
+          ]
+        }
+      },
+      {
+        "year": 2010,
+        "population": 10500,
+        "coastline": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [89.175, 21.875],
+              [89.195, 21.875],
+              [89.195, 21.895],
+              [89.175, 21.895],
+              [89.175, 21.875]
+            ]
+          ]
+        }
+      },
+      {
+        "year": 2024,
+        "population": 7800,
+        "land_loss_hectares": 410,
+        "coastline": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [89.18, 21.88],
+              [89.19, 21.88],
+              [89.19, 21.89],
+              [89.18, 21.89],
+              [89.18, 21.88]
+            ]
+          ]
+        }
+      },
+      {
+        "year": 2050,
+        "population": 0,
+        "projection": true,
+        "coastline": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [89.183, 21.883],
+              [89.187, 21.883],
+              [89.187, 21.887],
+              [89.183, 21.887],
+              [89.183, 21.883]
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "story": {
+    "person": "Rahim Sheikh",
+    "occupation": "Fisherman",
+    "age": 54,
+    "quote": "In 2019, Cyclone Bulbul took my house. Now I live on the embankment with my family. The fish are disappearing. The river is angrier every year."
+  },
+  "sea_level_data": [
+    { "year": 2000, "level_cm": 0 },
+    { "year": 2005, "level_cm": 4 },
+    { "year": 2010, "level_cm": 8 },
+    { "year": 2015, "level_cm": 13 },
+    { "year": 2020, "level_cm": 16 },
+    { "year": 2024, "level_cm": 18 },
+    { "year": 2030, "level_cm": 28, "projection": true },
+    { "year": 2040, "level_cm": 45, "projection": true },
+    { "year": 2050, "level_cm": 65, "projection": true }
+  ]
+}
