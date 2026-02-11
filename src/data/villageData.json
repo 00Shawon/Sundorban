@@ -72,10 +72,11 @@
     ]
   },
   "story": {
-    "person": "Rahim Sheikh",
-    "occupation": "Fisherman",
-    "age": 54,
-    "quote": "In 2019, Cyclone Bulbul took my house. Now I live on the embankment with my family. The fish are disappearing. The river is angrier every year."
+    "person": "Chanda Ray",
+    "occupation": "Housewife",
+    "age": 42,
+    "quote": "The water crisis here is getting worse every year. We have to walk miles just for a pot of safe drinking water. Climate change is stealing our sanity and our health.",
+    "location": "Dacope, Khulna"
   },
   "sea_level_data": [
     { "year": 2000, "level_cm": 0 },
