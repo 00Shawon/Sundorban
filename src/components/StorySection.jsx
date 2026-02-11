@@ -80,45 +80,65 @@ function StorySection() {
         
         {/* Story Content */}
         <motion.div 
-          className="relative lg:pl-4"
+          className="relative lg:pl-12"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
         >
           {/* Section Breadcrumb */}
-          <div className="mb-8">
-            <span className="text-sm font-bold text-primary tracking-[0.2em] uppercase">Human Impact</span>
-            <div className="h-1 w-12 bg-primary mt-2"></div>
+          <div className="mb-10 flex items-center gap-4">
+            <div className="h-[1px] w-12 bg-primary/40"></div>
+            <span className="text-sm font-bold text-primary tracking-[0.25em] uppercase">Human Impact</span>
           </div>
 
+          {/* Subtitle */}
+          <motion.h2 
+            className="text-primary font-bold text-lg md:text-xl mb-4 tracking-tight"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            {story.subtitle}
+          </motion.h2>
+
           {/* Large Quote Mark */}
-          <div className="absolute -top-12 -left-8 text-[12rem] text-primary/10 font-serif leading-none pointer-events-none select-none">
+          <div className="absolute top-20 -left-6 text-[14rem] text-primary/5 font-serif leading-none pointer-events-none select-none italic">
             "
           </div>
           
           {/* Quote */}
-          <blockquote className="relative text-2xl md:text-4xl lg:text-5xl font-medium leading-[1.3] text-slate-800 mb-12">
+          <blockquote className="relative text-3xl md:text-4xl lg:text-5xl font-medium leading-[1.2] text-slate-800 mb-10 tracking-tight">
             {story.quote}
           </blockquote>
+
+          {/* Narrative Context */}
+          <motion.p 
+            className="text-lg md:text-xl text-slate-600 leading-relaxed mb-12 max-w-2xl border-l-2 border-slate-200 pl-6"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+          >
+            {story.context}
+          </motion.p>
           
           {/* Profile Card */}
-          <div className="flex items-center gap-6">
-            <div className="w-16 h-16 md:w-20 md:h-20 bg-primary/10 rounded-2xl flex items-center justify-center">
-              <svg className="w-10 h-10 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="flex items-center gap-6 p-1">
+            <div className="w-16 h-16 md:w-20 md:h-20 bg-primary/10 rounded-3xl flex items-center justify-center shadow-inner">
+              <svg className="w-10 h-10 text-primary opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
             </div>
             <div>
-              <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-1">
+              <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
                 {story.person}
               </h3>
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-slate-600">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-slate-500 font-medium">
                 <span className="text-lg">{story.occupation}</span>
-                <span className="w-1.5 h-1.5 bg-slate-300 rounded-full"></span>
+                <div className="w-1.5 h-1.5 bg-primary/30 rounded-full"></div>
                 <span className="text-lg">Age {story.age}</span>
-                <span className="w-1.5 h-1.5 bg-slate-300 rounded-full"></span>
-                <span className="text-lg text-primary font-semibold">{story.location}</span>
+                <div className="w-1.5 h-1.5 bg-primary/30 rounded-full"></div>
+                <span className="text-lg text-primary/80">{story.location}</span>
               </div>
             </div>
           </div>
