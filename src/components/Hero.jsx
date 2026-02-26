@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import Drawing from './../assets/Drawning.jpeg';
 
 function Hero() {
   return (
@@ -7,7 +8,7 @@ function Hero() {
       <div 
         className="absolute inset-0 z-0 opacity-40"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=1600)',
+          backgroundImage: `url(${Drawing})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
