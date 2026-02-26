@@ -30,6 +30,23 @@ function Hero() {
           By 2050, it may have none.
         </h2>
         
+        {/* CTA Button */}
+        <motion.div
+          className="mt-10 flex justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+        >
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://docs.google.com/document/d/1Xct2rn1e_d7IKZA-6XgXoUqIiT50HygyQN_dx6k6b68/edit?usp=sharing"
+            className="px-8 py-4 border-2 border-white/30 text-white rounded-2xl font-bold hover:border-secondary hover:text-secondary transition-all duration-300 text-center text-sm tracking-widest backdrop-blur-sm bg-white/5 hover:bg-white/10"
+          >
+            VIEW POLICY PAPER
+          </a>
+        </motion.div>
+
         {/* Scroll Indicator */}
         <motion.div 
           className="mt-16 flex flex-col items-center text-2xl"
