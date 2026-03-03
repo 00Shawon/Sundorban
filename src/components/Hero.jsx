@@ -33,7 +33,7 @@ function Hero() {
         
         {/* CTA Button */}
         <motion.div
-          className="mt-10 flex justify-center"
+          className="mt-10 flex gap-5 justify-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
@@ -41,8 +41,16 @@ function Hero() {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://docs.google.com/document/d/1Xct2rn1e_d7IKZA-6XgXoUqIiT50HygyQN_dx6k6b68/edit?usp=sharing"
-            className="px-8 py-4 border-2 border-white/30 text-white rounded-2xl font-bold hover:border-secondary hover:text-secondary transition-all duration-300 text-center text-sm tracking-widest backdrop-blur-sm bg-white/5 hover:bg-white/10"
+            href="https://drive.google.com/file/d/1AAdNpy062D9JYnmDp9hC2PNkA-lt83pa/view?usp=sharing"
+            className="px-8 py-4 border-2 border-white/30 text-white bg-black rounded-2xl font-bold transition-all duration-300 text-center text-sm tracking-widest backdrop-blur-sm hover:bg-white/10"
+          >
+            VIEW POLICY BRIEF
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://drive.google.com/file/d/16-S70b48NDjeVdtzMvjAAX-zhnMd4-Q7/view?usp=sharing"
+            className="px-8 py-4 border-2 border-white/30 text-white hover:bg-black rounded-2xl font-bold transition-all duration-300 text-center text-sm tracking-widest backdrop-blur-sm bg-white/10"
           >
             VIEW POLICY PAPER
           </a>
