@@ -32,7 +32,7 @@ const findings = [
     ),
   },
   {
-    stat: '2-5 Mbps',
+    stat: '70–100 kbps',
     title: 'Bandwidth Constraints',
     desc: 'Image-heavy platforms take 15-20 seconds to load, rendering them unusable for time-sensitive warnings',
     icon: (
@@ -176,6 +176,16 @@ function CommunityImpact() {
             ))}
           </div>
         </motion.div>
+
+        {/* Methodology Note */}
+        <div className="my-8 max-w-4xl mx-auto">
+          <p className="text-sm text-slate-500 italic leading-snug border-l-4 border-indigo-200 pl-4">
+            <strong>Methodology Note:</strong> Interviews were conducted in Bangla using semi-structured protocols 
+            between November 2024 and January 2025 in Gabura and Padmapukur Unions. 
+            Qualitative insights prioritize the preservation of participant dignity and cultural context 
+            over literal transcription. Technical latency was measured on local 2G networks (approx. 70 kbps).
+          </p>
+        </div>
 
         {/* Community-Identified Priorities */}
         <motion.div
