@@ -1,151 +1,228 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import villageData from '../data/villageData.json';
 import documentaryImg from '../assets/Documentry.png';
+import { useLanguage } from '../context/LanguageContext';
 
-function StorySection() {
-  const story = villageData.story;
+export default function StorySection() {
+  const { lang, t } = useLanguage();
+  const [activeStoryIndex, setActiveStoryIndex] = useState(0);
+  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+  const [videoModalOpen, setVideoModalOpen] = useState(false);
+
+  const stories = villageData.oral_histories;
+  const currentStory = stories[activeStoryIndex];
   const videoUrl = "https://photos.app.goo.gl/TpQaVzEMCkVZyv9j9";
 
+  const handleAudioSim = () => {
+    setIsPlayingAudio(!isPlayingAudio);
+    if (!isPlayingAudio) {
+      setTimeout(() => {
+        setIsPlayingAudio(false);
+      }, 7000);
+    }
+  };
+
   return (
-    <section className="relative min-h-screen bg-slate-50 py-24 px-6 md:px-12 flex items-center justify-center overflow-hidden">
-      {/* Background Decorative Elements */}
-      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
-
-      <motion.div 
-        className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        {/* Video Placeholder - Premium Player */}
-        <motion.div 
-          className="relative group cursor-pointer"
-          whileHover={{ scale: 1.02 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-          onClick={() => window.open(videoUrl, '_blank')}
-        >
-          {/* Main Card */}
-          <div className="relative aspect-[16/9] bg-slate-900 rounded-[2.5rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] border border-white/10">
-            <img 
-              src={documentaryImg} 
-              alt="Documentary Preview"
-              className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-in-out"
-            />
-            
-            {/* Overlay Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300"></div>
-            
-            {/* Play Button - Premium Glassmorphism */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="relative group/btn">
-                <div className="absolute inset-0 bg-white/20 rounded-full blur-xl scale-150 group-hover:bg-white/30 transition-all duration-500"></div>
-                <div className="relative w-24 h-24 md:w-32 md:h-32 bg-white/10 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center text-white shadow-2xl group-hover:bg-white/20 group-hover:border-white/50 transition-all duration-500 group-hover:scale-110">
-                  <svg 
-                    className="w-10 h-10 md:w-14 md:h-14 ml-2 fill-current" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            {/* Video Info Overlay */}
-            <div className="absolute bottom-8 left-8 right-8 text-white">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="px-3 py-1 bg-primary/80 backdrop-blur-md rounded-full text-xs font-bold tracking-wider uppercase">Documentary</span>
-                <span className="text-sm opacity-80">6:42 • 4K HD</span>
-              </div>
-              <h4 className="text-xl md:text-2xl font-bold tracking-tight">The Vanishing Sanity: Water Crisis in Dacope</h4>
-            </div>
+    <section 
+      id="story-section" 
+      className="relative min-h-screen bg-[#080c14] py-36 md:py-48 px-6 md:px-16 flex flex-col justify-center items-center border-t border-white/[0.06]"
+    >
+      <div className="w-full max-w-6xl mx-auto">
+        
+        {/* Spacious Section Header */}
+        <div className="mb-20 text-center max-w-2xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-teal-300 text-xs font-medium tracking-wide uppercase mb-4">
+            {t.voices.breadcrumb}
           </div>
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-normal font-serif text-white tracking-tight mb-4">
+            {t.voices.title}
+          </h2>
+          <p className="text-base text-slate-400 font-light leading-relaxed">
+            {t.voices.subtitle}
+          </p>
+        </div>
 
-          {/* Decorative Floating Label */}
-          <div className="absolute -top-6 -right-6 hidden md:block">
+        {/* Character Story Tabs with Generous Padding */}
+        <div className="flex items-center justify-center gap-2 sm:gap-4 mb-20 flex-wrap">
+          {stories.map((s, idx) => {
+            const isSelected = idx === activeStoryIndex;
+            return (
+              <button
+                key={s.id}
+                onClick={() => {
+                  setActiveStoryIndex(idx);
+                  setIsPlayingAudio(false);
+                }}
+                className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 border ${
+                  isSelected
+                    ? 'bg-white/10 text-white border-teal-400/40 font-semibold shadow-sm'
+                    : 'bg-transparent text-slate-400 border-white/[0.08] hover:text-slate-200 hover:border-white/20'
+                }`}
+              >
+                <span>{lang === 'bn' ? s.person_bn : s.person}</span>
+                <span className="text-[11px] text-slate-500 ml-1.5 hidden sm:inline">
+                  • {s.age}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Main Editorial Story Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+          
+          {/* Left Column: Clean Video Preview Card (5 cols) */}
+          <div className="lg:col-span-5">
             <motion.div 
-              className="px-6 py-4 bg-white shadow-xl rounded-2xl border border-slate-100"
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.5 }}
+              className="relative group cursor-pointer rounded-3xl overflow-hidden border border-white/[0.1] shadow-2xl bg-[#0c121e]"
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.3 }}
+              onClick={() => setVideoModalOpen(true)}
             >
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                <p className="text-sm font-bold text-slate-800">Watch Interview</p>
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img 
+                  src={documentaryImg} 
+                  alt="Documentary Footage Preview"
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-95 group-hover:scale-105 transition-all duration-700 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#080c14] via-transparent to-transparent opacity-90" />
+                
+                {/* Minimalist Play Icon */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md border border-white/40 flex items-center justify-center text-white group-hover:bg-teal-400 group-hover:text-slate-950 transition-all duration-200 shadow-xl">
+                    <svg className="w-6 h-6 ml-1 fill-current" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                </div>
+
+                <div className="absolute bottom-5 left-6 right-6">
+                  <span className="text-[10px] uppercase font-semibold text-teal-300 tracking-wider block mb-1">
+                    {t.voices.watchDoc}
+                  </span>
+                  <h4 className="text-sm md:text-base font-semibold text-white font-serif line-clamp-1">
+                    {t.voices.videoModalTitle}
+                  </h4>
+                </div>
               </div>
             </motion.div>
           </div>
-        </motion.div>
-        
-        {/* Story Content */}
-        <motion.div 
-          className="relative lg:pl-12"
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          {/* Section Breadcrumb */}
-          <div className="mb-10 flex items-center gap-4">
-            <div className="h-[1px] w-12 bg-primary/40"></div>
-            <span className="text-sm font-bold text-primary tracking-[0.25em] uppercase">Human Impact</span>
+
+          {/* Right Column: Spacious Literary Testimonial (7 cols) */}
+          <div className="lg:col-span-7">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentStory.id + lang}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+                className="space-y-8"
+              >
+                {/* Theme Tag */}
+                <span className="text-xs uppercase font-semibold tracking-wider text-amber-300/90 block">
+                  {lang === 'bn' ? currentStory.tag_bn : currentStory.tag_en}
+                </span>
+
+                {/* Literary Quote in Playfair Display Serif */}
+                <blockquote className="text-2xl sm:text-3xl md:text-4xl font-normal font-serif text-slate-100 leading-relaxed tracking-tight">
+                  “{lang === 'bn' ? currentStory.quote_bn : currentStory.quote}”
+                </blockquote>
+
+                {/* Field Notes Context */}
+                <p className="text-base text-slate-400 font-light leading-relaxed border-l border-teal-500/30 pl-5 py-1">
+                  {lang === 'bn' ? currentStory.context_bn : currentStory.context}
+                </p>
+
+                {/* Author Card & Audio Testimonial Tool */}
+                <div className="pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <div>
+                    <h3 className="text-lg font-semibold text-white font-serif">
+                      {lang === 'bn' ? currentStory.person_bn : currentStory.person}
+                    </h3>
+                    <p className="text-xs text-slate-400 mt-0.5">
+                      {lang === 'bn' ? currentStory.occupation_bn : currentStory.occupation} • Age {currentStory.age}
+                    </p>
+                    <p className="text-xs text-slate-500 mt-0.5">
+                      📍 {lang === 'bn' ? currentStory.location_bn : currentStory.location}
+                    </p>
+                  </div>
+
+                  {/* Audio Player Action Button */}
+                  {/* <button
+                    onClick={handleAudioSim}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-full border text-xs font-medium transition-all ${
+                      isPlayingAudio
+                        ? 'bg-amber-500/15 text-amber-300 border-amber-500/30'
+                        : 'bg-white/[0.04] text-slate-300 border-white/[0.08] hover:text-white hover:bg-white/[0.08]'
+                    }`}
+                  >
+                    <span>{isPlayingAudio ? '🔊' : '🎙️'}</span>
+                    <span>{isPlayingAudio ? t.voices.playing : t.voices.listenSnippet}</span>
+                    <span className="text-[10px] text-slate-500">({currentStory.audio_length})</span>
+                  </button> */}
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
 
-          {/* Subtitle */}
-          <motion.h2 
-            className="text-primary font-bold text-lg md:text-xl mb-4 tracking-tight"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-          >
-            {story.subtitle}
-          </motion.h2>
+        </div>
 
-          {/* Large Quote Mark */}
-          <div className="absolute top-20 -left-6 text-[14rem] text-primary/5 font-serif leading-none pointer-events-none select-none italic">
-            "
-          </div>
-          
-          {/* Quote */}
-          <blockquote className="relative text-3xl md:text-4xl lg:text-5xl font-medium leading-[1.2] text-slate-800 mb-10 tracking-tight">
-            {story.quote}
-          </blockquote>
+      </div>
 
-          {/* Narrative Context */}
-          <motion.p 
-            className="text-lg md:text-xl text-slate-600 leading-relaxed mb-12 max-w-2xl border-l-2 border-slate-200 pl-6"
+      {/* IN-APP VIDEO LIGHTBOX MODAL */}
+      <AnimatePresence>
+        {videoModalOpen && (
+          <motion.div
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[2000] bg-black/90 backdrop-blur-xl flex items-center justify-center p-4 md:p-10"
           >
-            {story.context}
-          </motion.p>
-          
-          {/* Profile Card */}
-          <div className="flex items-center gap-6 p-1">
-            <div className="w-16 h-16 md:w-20 md:h-20 bg-primary/10 rounded-3xl flex items-center justify-center shadow-inner">
-              <svg className="w-10 h-10 text-primary opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
-            </div>
-            <div>
-              <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
-                {story.person}
-              </h3>
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-slate-500 font-medium">
-                <span className="text-lg">{story.occupation}</span>
-                <div className="w-1.5 h-1.5 bg-primary/30 rounded-full"></div>
-                <span className="text-lg">Age {story.age}</span>
-                <div className="w-1.5 h-1.5 bg-primary/30 rounded-full"></div>
-                <span className="text-lg text-primary/80">{story.location}</span>
+            <div className="relative w-full max-w-4xl bg-[#0c121e] border border-white/[0.1] rounded-3xl overflow-hidden shadow-2xl">
+              <div className="flex items-center justify-between p-6 border-b border-white/[0.08]">
+                <div>
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-teal-400 block mb-1">
+                    {t.voices.videoModalBadge}
+                  </span>
+                  <h3 className="text-lg font-semibold text-white font-serif">
+                    {t.voices.videoModalTitle}
+                  </h3>
+                </div>
+                <button
+                  onClick={() => setVideoModalOpen(false)}
+                  className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-xs transition-colors"
+                >
+                  ✕
+                </button>
+              </div>
+
+              <div className="relative aspect-video bg-black flex items-center justify-center overflow-hidden">
+                <img
+                  src={documentaryImg}
+                  alt="Video Stream Preview"
+                  className="w-full h-full object-cover opacity-60"
+                />
+                
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center bg-black/60">
+                  <p className="text-sm md:text-base text-slate-200 max-w-lg mb-8 leading-relaxed font-light">
+                    {t.voices.videoDescription}
+                  </p>
+                  <a
+                    href={videoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 rounded-full bg-teal-400 hover:bg-teal-300 text-slate-950 font-semibold text-xs tracking-wider uppercase transition-all shadow-md"
+                  >
+                    {t.voices.externalLink}
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        </motion.div>
-      </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
-
-export default StorySection;

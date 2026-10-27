@@ -1,94 +1,412 @@
 {
-  "village": {
-    "name": "Gabura",
-    "coordinates": [21.8833, 89.1833],
-    "timeline": [
-      {
-        "year": 2000,
-        "population": 12000,
-        "coastline": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [89.17, 21.87],
-              [89.20, 21.87],
-              [89.20, 21.90],
-              [89.17, 21.90],
-              [89.17, 21.87]
+  "villages": {
+    "gabura": {
+      "id": "gabura",
+      "name": "Gabura",
+      "name_bn": "গাবুরা",
+      "district": "Shyamnagar, Satkhira",
+      "district_bn": "শ্যামনগর, সাতক্ষীরা",
+      "coordinates": [21.8833, 89.1833],
+      "description": "Ground zero of coastal erosion. An isolated delta island besieged by the Kholpetua and Kobadak rivers.",
+      "description_bn": "উপকূলীয় ভাঙনের কেন্দ্রবিন্দু। খোলপেটুয়া ও কপোতাক্ষ নদী দ্বারা বেষ্টিত একটি বিচ্ছিন্ন বদ্বীপ ইউনিয়ন।",
+      "timeline": [
+        {
+          "year": 2000,
+          "population": 12000,
+          "land_loss_hectares": 0,
+          "status_en": "Ecosystem Equilibrium",
+          "status_bn": "স্থিতিশীল বাস্তুতন্ত্র",
+          "salinity_ppt": 2.1,
+          "coastline": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [89.165, 21.865],
+                [89.205, 21.865],
+                [89.205, 21.905],
+                [89.165, 21.905],
+                [89.165, 21.865]
+              ]
             ]
-          ]
-        }
-      },
-      {
-        "year": 2010,
-        "population": 10500,
-        "coastline": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [89.175, 21.875],
-              [89.195, 21.875],
-              [89.195, 21.895],
-              [89.175, 21.895],
-              [89.175, 21.875]
+          }
+        },
+        {
+          "year": 2010,
+          "population": 10500,
+          "land_loss_hectares": 120,
+          "status_en": "Post-Aila Degradation",
+          "status_bn": "আইলা-পরবর্তী তীব্র ভাঙন",
+          "salinity_ppt": 8.4,
+          "coastline": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [89.172, 21.872],
+                [89.198, 21.872],
+                [89.198, 21.898],
+                [89.172, 21.898],
+                [89.172, 21.872]
+              ]
             ]
-          ]
-        }
-      },
-      {
-        "year": 2024,
-        "population": 7800,
-        "land_loss_hectares": 410,
-        "coastline": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [89.18, 21.88],
-              [89.19, 21.88],
-              [89.19, 21.89],
-              [89.18, 21.89],
-              [89.18, 21.88]
+          }
+        },
+        {
+          "year": 2024,
+          "population": 7800,
+          "land_loss_hectares": 410,
+          "status_en": "Critical Embankment Collapse",
+          "status_bn": "বাঁধ ধস ও মারাত্মক সংকট",
+          "salinity_ppt": 17.8,
+          "coastline": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [89.178, 21.878],
+                [89.192, 21.878],
+                [89.192, 21.892],
+                [89.178, 21.892],
+                [89.178, 21.878]
+              ]
             ]
-          ]
-        }
-      },
-      {
-        "year": 2050,
-        "population": 0,
-        "projection": true,
-        "coastline": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [89.183, 21.883],
-              [89.187, 21.883],
-              [89.187, 21.887],
-              [89.183, 21.887],
-              [89.183, 21.883]
+          }
+        },
+        {
+          "year": 2050,
+          "population": 0,
+          "land_loss_hectares": 890,
+          "projection": true,
+          "status_en": "Projected Submersion",
+          "status_bn": "প্রকল্পিত নিমজ্জন",
+          "salinity_ppt": 26.5,
+          "coastline": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [89.183, 21.883],
+                [89.187, 21.883],
+                [89.187, 21.887],
+                [89.183, 21.887],
+                [89.183, 21.883]
+              ]
             ]
-          ]
+          }
         }
-      }
-    ]
+      ]
+    },
+    "padmapukur": {
+      "id": "padmapukur",
+      "name": "Padmapukur",
+      "name_bn": "পদ্মপুকুর",
+      "district": "Shyamnagar, Satkhira",
+      "district_bn": "শ্যামনগর, সাতক্ষীরা",
+      "coordinates": [21.942, 89.231],
+      "description": "Vulnerable ring-dyke community repeatedly breached by cyclonic tidal surges.",
+      "description_bn": "ঘূর্ণিঝড় জলোচ্ছ্বাসে বারবার ক্ষতিগ্রস্ত রিং-বাঁধ বেষ্টিত অরক্ষিত উপকূলীয় অঞ্চল।",
+      "timeline": [
+        {
+          "year": 2000,
+          "population": 15400,
+          "land_loss_hectares": 0,
+          "status_en": "Intact Protective Dykes",
+          "status_bn": "সুরক্ষিত বাঁধ কাঠামো",
+          "salinity_ppt": 1.8,
+          "coastline": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [89.215, 21.925],
+                [89.248, 21.925],
+                [89.248, 21.958],
+                [89.215, 21.958],
+                [89.215, 21.925]
+              ]
+            ]
+          }
+        },
+        {
+          "year": 2010,
+          "population": 13800,
+          "land_loss_hectares": 95,
+          "status_en": "Saline Soil Infiltration",
+          "status_bn": "লবণাক্ত পানি অনুপ্রবেশ",
+          "salinity_ppt": 7.1,
+          "coastline": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [89.221, 21.930],
+                [89.242, 21.930],
+                [89.242, 21.952],
+                [89.221, 21.952],
+                [89.221, 21.930]
+              ]
+            ]
+          }
+        },
+        {
+          "year": 2024,
+          "population": 10200,
+          "land_loss_hectares": 340,
+          "status_en": "Accelerated River Erosion",
+          "status_bn": "তীব্র নদীভাঙন ও স্থানচ্যুতি",
+          "salinity_ppt": 15.6,
+          "coastline": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [89.226, 21.934],
+                [89.238, 21.934],
+                [89.238, 21.948],
+                [89.226, 21.948],
+                [89.226, 21.934]
+              ]
+            ]
+          }
+        },
+        {
+          "year": 2050,
+          "population": 1200,
+          "land_loss_hectares": 720,
+          "projection": true,
+          "status_en": "High Submersion Threat",
+          "status_bn": "উচ্চ নিমজ্জন ঝুঁকি",
+          "salinity_ppt": 24.2,
+          "coastline": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [89.229, 21.938],
+                [89.234, 21.938],
+                [89.234, 21.944],
+                [89.229, 21.944],
+                [89.229, 21.938]
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    "munshiganj": {
+      "id": "munshiganj",
+      "name": "Munshiganj",
+      "name_bn": "মুন্সীগঞ্জ",
+      "district": "Shyamnagar, Satkhira",
+      "district_bn": "শ্যামনগর, সাতক্ষীরা",
+      "coordinates": [22.213, 89.227],
+      "description": "Bordering the UNESCO Sundarbans reserve; facing mangrove buffer retreat and saline intrusions.",
+      "description_bn": "ইউনেস্কো সুন্দরবনের প্রবেশদ্বার; ম্যানগ্রোভ বনভূমির সুরক্ষা হ্রাস ও তীব্র লবণাক্ততা।",
+      "timeline": [
+        {
+          "year": 2000,
+          "population": 18200,
+          "land_loss_hectares": 0,
+          "status_en": "Healthy Mangrove Buffer",
+          "status_bn": "সবুজ ম্যানগ্রোভ প্রাচীর",
+          "salinity_ppt": 1.5,
+          "coastline": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [89.210, 22.195],
+                [89.245, 22.195],
+                [89.245, 22.230],
+                [89.210, 22.230],
+                [89.210, 22.195]
+              ]
+            ]
+          }
+        },
+        {
+          "year": 2010,
+          "population": 16900,
+          "land_loss_hectares": 60,
+          "status_en": "Pond Salinization",
+          "status_bn": "মিঠা পানির পুকুরে লবণাক্ততা",
+          "salinity_ppt": 5.8,
+          "coastline": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [89.214, 22.200],
+                [89.240, 22.200],
+                [89.240, 22.225],
+                [89.214, 22.225],
+                [89.214, 22.200]
+              ]
+            ]
+          }
+        },
+        {
+          "year": 2024,
+          "population": 13400,
+          "land_loss_hectares": 210,
+          "status_en": "Freshwater Scarcity Stress",
+          "status_bn": "চরম খাবার পানির সংকট",
+          "salinity_ppt": 12.9,
+          "coastline": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [89.218, 22.205],
+                [89.236, 22.205],
+                [89.236, 22.220],
+                [89.218, 22.220],
+                [89.218, 22.205]
+              ]
+            ]
+          }
+        },
+        {
+          "year": 2050,
+          "population": 4500,
+          "land_loss_hectares": 510,
+          "projection": true,
+          "status_en": "Severe Agricultural Loss",
+          "status_bn": "কৃষিভূমির সম্পূর্ণ ধ্বংস",
+          "salinity_ppt": 21.0,
+          "coastline": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [89.221, 22.208],
+                [89.232, 22.208],
+                [89.232, 22.217],
+                [89.221, 22.217],
+                [89.221, 22.208]
+              ]
+            ]
+          }
+        }
+      ]
+    }
   },
-  "story": {
-    "person": "Chanda Ray",
-    "occupation": "Housewife",
-    "age": 42,
-    "quote": "The taste of salt is everywhere—in our tea, in our rice, even in our tears. We walk for hours under a sun that feels like fire, searching for drinkable water that won't make our children sick.",
-    "subtitle": "A Voice from the Frontlines of Climate Change",
-    "context": "In Dacope, Khulna, the water has turned once-fertile land into a salty land where ariculture is difficult. For residents like Chanda Ray, the crisis isn't just about water; it's about the slow erosion of health, dignity, and sanity in a landscape defined by scarcity.",
-    "location": "Dacope, Khulna"
-  },
+  "cyclones": [
+    {
+      "name": "Cyclone Sidr",
+      "name_bn": "ঘূর্ণিঝড় সিডর",
+      "year": 2007,
+      "category": "Category 5",
+      "surge_meters": 5.2,
+      "impact": "Decimated natural mangrove canopies and breached 240km of dikes."
+    },
+    {
+      "name": "Cyclone Aila",
+      "name_bn": "ঘূর্ণিঝড় আইলা",
+      "year": 2009,
+      "category": "Category 1 (Severe Surge)",
+      "surge_meters": 4.1,
+      "impact": "Submerged Gabura for over two years, permanently salinizing soil."
+    },
+    {
+      "name": "Cyclone Amphan",
+      "name_bn": "ঘূর্ণিঝড় আম্পান",
+      "year": 2020,
+      "category": "Super Cyclone",
+      "surge_meters": 4.8,
+      "impact": "Destroyed 150,000+ homes and contaminated 80% of freshwater ponds."
+    },
+    {
+      "name": "Cyclone Remal",
+      "name_bn": "ঘূর্ণিঝড় রেমাল",
+      "year": 2024,
+      "category": "Severe Cyclonic Storm",
+      "surge_meters": 3.7,
+      "impact": "Prolonged tidal inundation lasting 36+ hours across Satkhira & Khulna."
+    }
+  ],
+  "oral_histories": [
+    {
+      "id": "chanda",
+      "person": "Chanda Ray",
+      "person_bn": "চন্দা রায়",
+      "occupation": "Housewife & Water Harvester",
+      "occupation_bn": "গৃহিণী ও পানি সংগ্রাহক",
+      "age": 42,
+      "location": "Dacope, Khulna",
+      "location_bn": "দাকোপ, খুলনা",
+      "quote": "The taste of salt is everywhere—in our tea, in our rice, even in our tears. We walk for hours under a sun that feels like fire, searching for drinkable water that won't make our children sick.",
+      "quote_bn": "লবণের স্বাদ সর্বত্র—আমাদের চায়ে, ভাতে, এমনকি চোখের জলেও। আগুনের মতো রোদে আমরা ঘণ্টার পর ঘণ্টা হেঁটে যাই এমন এক কলস খাবার পানির খোঁজে, যা পান করলে আমাদের শিশুরা অসুস্থ হবে না।",
+      "audio_length": "2:14",
+      "tag_en": "Salinity & Caregiving Crisis",
+      "tag_bn": "লবণাক্ততা ও জীবনসংগ্রাম",
+      "context": "In Dacope, women walk up to 6 kilometers daily carrying 15-liter metal pitchers (kolshi). Saline groundwater has induced widespread hypertension, maternal complications, and kidney ailments.",
+      "context_bn": "দাকোপে নারীরা প্রতিদিন ১৫ লিটারের ভারী কলসি কাঁখে নিয়ে ৫-৬ কিলোমিটার পথ হাঁটেন। লবণাক্ত পানির কারণে স্থানীয়দের মধ্যে উচ্চ রক্তচাপ, গর্ভকালীন জটিলতা ও কিডনি রোগ মহামারি আকার ধারণ করেছে।"
+    },
+    {
+      "id": "rahim",
+      "person": "Rahim Molla",
+      "person_bn": "রহিম মোল্লা",
+      "occupation": "Former Honey Hunter (Mawali) & Displaced Day Laborer",
+      "occupation_bn": "সাবেক মৌয়াল ও দিনমজুর",
+      "age": 54,
+      "location": "Gabura / Now Khulna Slum",
+      "location_bn": "গাবুরা / বর্তমানে খুলনা বস্তি",
+      "quote": "The forest was our mother. It gave us honey and fish. But when the Kholpetua swallowed my homestead in 2018, no bank gave us a loan. I am now pulling a rickshaw in Khulna, breathing exhaust fumes instead of salty mangroves.",
+      "quote_bn": "সুন্দরবন ছিল আমাদের মায়ের মতো। মধু আর মাছ দিয়ে আমাদের বাঁচিয়ে রাখত। কিন্তু ২০১৮ সালে যখন খোলপেটুয়া নদী আমার ভিটেমাটি গিলে খেল, কোনো ব্যাংক ঋণ দেয়নি। আজ আমি খুলনার বস্তিতে রিকশা চালাই, বনের বাতাসের বদলে কালো ধোঁয়া নিই।",
+      "audio_length": "1:48",
+      "tag_en": "Ecological Eviction & Migration",
+      "tag_bn": "পরিবেশগত উচ্ছেদ ও জলবায়ু শরণার্থী",
+      "context": "Traditional livelihoods in Gabura collapsed after supercyclones disrupted mangrove fish nurseries and saline water killed agricultural land, triggering mass migration to Khulna and Dhaka.",
+      "context_bn": "ঘূর্ণিঝড় ও লবণাক্ততার কারণে সুন্দরবনের ঐতিহ্যবাহী পেশা বিলুপ্ত হয়েছে। ফলে হাজার হাজার পরিবার পৈতৃক ভিটা ছেড়ে শহুরে বস্তিগুলোতে মানবেতর জীবনযাপন করতে বাধ্য হচ্ছে।"
+    },
+    {
+      "id": "anwara",
+      "person": "Anwara Begum",
+      "person_bn": "আনোয়ারা বেগম",
+      "occupation": "Primary School Teacher",
+      "occupation_bn": "প্রাথমিক বিদ্যালয়ের শিক্ষিকা",
+      "age": 36,
+      "location": "Padmapukur, Satkhira",
+      "location_bn": "পদ্মপুকুর, সাতক্ষীরা",
+      "quote": "Three times our school building had to be dismantled and relocated inland. The children lose months of education every monsoon when our classrooms turn into emergency flood shelters.",
+      "quote_bn": "তিনবার আমাদের স্কুল ভেঙে ভেতরে সরিয়ে নিতে হয়েছে। প্রতি বর্ষায় যখন শ্রেণিকক্ষগুলো সাইক্লোন আশ্রয়কেন্দ্রে পরিণত হয়, তখন শিশুদের লেখাপড়া মাসের পর মাস বন্ধ থাকে।",
+      "audio_length": "2:30",
+      "tag_en": "Disrupted Generations",
+      "tag_bn": "শিক্ষা ও ভবিষ্যৎ বিপন্ন",
+      "context": "Over 40% of schools in coastal delta zones double as cyclone shelters. Chronic flooding and erosion consistently elevate student dropout rates and early child marriage.",
+      "context_bn": "উপকূলীয় অঞ্চলের ৪০% বিদ্যালয় সাইক্লোন শেল্টার হিসেবে ব্যবহৃত হয়। বারবার দুর্যোগের ফলে শিক্ষার্থীদের ঝরে পড়ার হার এবং বাল্যবিয়ে আশঙ্কাজনকভাবে বাড়ছে।"
+    },
+    {
+      "id": "subal",
+      "person": "Subal Das",
+      "person_bn": "সুবল দাস",
+      "occupation": "Shrimp Gher Worker & Fisher",
+      "occupation_bn": "চিংড়ি ঘেরের শ্রমিক ও জেলে",
+      "age": 29,
+      "location": "Munshiganj, Satkhira",
+      "location_bn": "মুন্সীগঞ্জ, সাতক্ষীরা",
+      "quote": "People think shrimp farming made our region rich. It made five businessmen rich and turned the rest of us into landless laborers. Now even the shrimp die because river temperatures are rising.",
+      "quote_bn": "মানুষ ভাবে চিংড়ি চাষে আমাদের অঞ্চল ধনী হয়েছে। আসলে ধনী হয়েছে মাত্র পাঁচজন ব্যবসায়ী, আর বাকি আমরা সবাই ভূমিহীন শ্রমিক হয়ে গেছি। এখন তো অতিরিক্ত তাপদাহে ঘেরের চিংড়িও মরে ভেসে উঠছে।",
+      "audio_length": "1:55",
+      "tag_en": "Debt Cycles & Economic Vulnerability",
+      "tag_bn": "ঋণের চক্র ও অর্থনৈতিক বিপর্যয়",
+      "context": "Commercial shrimp farming deliberately brought saline water inland through broken embankments during the 1990s, accelerating soil infertility and food insecurity.",
+      "context_bn": "বাণিজ্যিক চিংড়ি চাষের জন্য নব্বইয়ের দশকে বাঁধ কেটে লবণাক্ত পানি ঢোকানো হয়েছিল। এর ফলশ্রুতিতে কৃষি জমি স্থায়ীভাবে নষ্ট হয়ে খাদ্য নিরাপত্তা ধ্বংস হয়েছে।"
+    }
+  ],
   "sea_level_data": [
-    { "year": 2000, "level_cm": 0 },
-    { "year": 2005, "level_cm": 4 },
-    { "year": 2010, "level_cm": 8 },
-    { "year": 2015, "level_cm": 13 },
-    { "year": 2020, "level_cm": 16 },
-    { "year": 2024, "level_cm": 18 },
-    { "year": 2030, "level_cm": 28, "projection": true },
-    { "year": 2040, "level_cm": 45, "projection": true },
-    { "year": 2050, "level_cm": 65, "projection": true }
+    { "year": 2000, "historical": 0, "ssp1": 0, "ssp2": 0, "ssp5": 0 },
+    { "year": 2005, "historical": 4.1, "ssp1": 3.8, "ssp2": 4.2, "ssp5": 4.5 },
+    { "year": 2010, "historical": 8.5, "ssp1": 7.6, "ssp2": 8.7, "ssp5": 9.4 },
+    { "year": 2015, "historical": 13.2, "ssp1": 11.5, "ssp2": 13.4, "ssp5": 14.8 },
+    { "year": 2020, "historical": 16.4, "ssp1": 15.2, "ssp2": 17.1, "ssp5": 19.5 },
+    { "year": 2024, "historical": 18.9, "ssp1": 18.0, "ssp2": 20.2, "ssp5": 23.4 },
+    { "year": 2030, "historical": null, "ssp1": 22.4, "ssp2": 28.5, "ssp5": 34.2, "projection": true },
+    { "year": 2040, "historical": null, "ssp1": 31.0, "ssp2": 44.8, "ssp5": 56.5, "projection": true },
+    { "year": 2050, "historical": null, "ssp1": 42.5, "ssp2": 65.0, "ssp5": 88.0, "projection": true }
+  ],
+  "salinity_comparison": [
+    { "location": "WHO Safe Drinking Limit", "salinity_ppt": 1.0, "status": "safe" },
+    { "location": "Freshwater Irrigation Threshold", "salinity_ppt": 2.0, "status": "safe" },
+    { "location": "Gabura Deep Tube-Well (2000)", "salinity_ppt": 2.1, "status": "moderate" },
+    { "location": "Munshiganj Pond Water (2024)", "salinity_ppt": 12.9, "status": "severe" },
+    { "location": "Gabura Surface Water (2024)", "salinity_ppt": 17.8, "status": "hazardous" },
+    { "location": "Post-Cyclone Surge Residual", "salinity_ppt": 24.5, "status": "hazardous" }
+  ],
+  "migration_flow": [
+    { "stage": "Origin: Gabura & Dacope", "count": "100%", "label": "Vulnerable Delta Basin" },
+    { "stage": "Transit: Khulna Suburbs (Rupsha)", "count": "48%", "label": "Informal Labor / Rickshaw Pulling" },
+    { "stage": "Destination: Dhaka (Korail, Kamrangirchar)", "count": "38%", "label": "Garment Workers / Day Labor" },
+    { "stage": "Secondary Displacement: Chittagong", "count": "14%", "label": "Brick Kilns / Shipbreaking" }
   ]
 }
